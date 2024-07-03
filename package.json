@@ -1,0 +1,26 @@
+{
+  "name": "tockr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanWongLS/Tockr.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanWongLS/Tockr/issues"
+  },
+  "homepage": "https://github.com/jonathanWongLS/Tockr#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.2.0",
+    "uuid": "^10.0.0"
+  }
+}
