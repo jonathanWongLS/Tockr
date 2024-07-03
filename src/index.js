@@ -106,4 +106,19 @@ function isValidDateTimeString(dateString) {
       return true;
 }
 
+async function encryptPassword(passwordString) {
+      // Generate a random 10 char string (salt)
+      const salt = await bcrypt.genSalt(10);
+
+      // Hash the password, this cannot be reversed
+      const encryptedPassword = await bcrypt.hash(passwordString, salt); 
+
+      return encryptedPassword;
+}
+
+async function passwordIsCorrect(passwordString, hashedPassword) {
+      const isPasswordCorrect = await bcrypt.compare(passwordString, hashedPassword);
+      return isPasswordCorrect;
+}
+
 client.login(process.env.TOKEN);
