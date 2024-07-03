@@ -121,4 +121,20 @@ async function passwordIsCorrect(passwordString, hashedPassword) {
       return isPasswordCorrect;
 }
 
+async function getUniqueProjectName(baseName) {
+      const projectsRef = DB.collection('projects');
+      const snapshot = await projectsRef.get();
+      const projectNames = snapshot.docs.map(doc => doc.data().projectName);
+
+      let uniqueName = baseName;
+      let counter = 1;
+
+      while (projectNames.includes(uniqueName)) {
+            uniqueName = `${baseName}-${counter}`;
+            counter++;
+      }
+
+      return uniqueName;
+}
+
 client.login(process.env.TOKEN);
